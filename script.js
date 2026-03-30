@@ -14,7 +14,7 @@ function playGame() {
     let computerScore = 0;
 
     function playRound(humanChoice, computerChoice) {
-        const div = document.querySelector("div");
+        const div = document.querySelector("#message");
         const overMessageP = document.querySelector("#overMessage");
 
         if (humanChoice === computerChoice) {

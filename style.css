@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#rockButton, #paperButton, #scissorsButton {
+    height: 200px;
+    width: 200px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
