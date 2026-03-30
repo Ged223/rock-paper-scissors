@@ -14,38 +14,46 @@ function playGame() {
     let computerScore = 0;
 
     function playRound(humanChoice, computerChoice) {
+        const div = document.querySelector("div");
+        const overMessageP = document.querySelector("#overMessage");
+
         if (humanChoice === computerChoice) {
-            console.log("Tie! You made the same choice.")
+            div.textContent = ("Tie! You made the same choice.")
             return;
         } else if (humanChoice === "rock" && computerChoice === "paper") {
-            console.log("You lose! Paper beats Rock");
+            div.textContent = ("You lose! Paper beats Rock");
             computerScore++;
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            console.log("You win! Rock beats Scissors");
+            div.textContent = ("You win! Rock beats Scissors");
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "rock") {
-            console.log("You win! Paper beats Rock");
+            div.textContent = ("You win! Paper beats Rock");
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            console.log("You lose! Scissors beat Paper");
+            div.textContent = ("You lose! Scissors beat Paper");
             computerScore++;
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            console.log("You lose! Rock beats Scissors");
+            div.textContent = ("You lose! Rock beats Scissors");
             computerScore++;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            console.log("You win! Scissors beat Paper");
+            div.textContent = ("You win! Scissors beat Paper");
             humanScore++;
         }
 
+        const scoreHumanP = document.querySelector("#scoreHuman");
+        const scoreComputerP = document.querySelector("#scoreComputer");
+        scoreHumanP.textContent = "Human: "+humanScore;
+        scoreComputerP.textContent = "Computer: "+computerScore;
+
         if (humanScore >= 5 || computerScore >= 5) {
             if (humanScore > computerScore) {
-                console.log("You win the game! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
+                overMessageP.textContent = ("You win the game! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
             } else if (computerScore > humanScore) {
-                console.log("You lose the game! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
+                overMessageP.textContent = ("You lose the game! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
             } else if (computerScore === humanScore) {
-                console.log("Tie! You both win and lose! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
+                overMessageP.textContent = ("Tie! You both win and lose! Your score was " + humanScore + " and the computer score was " + computerScore + ".");
             } else {
-                console.log("You broke the universe!");
+                overMessageP.textContent = ("You broke the universe!");
             }
         }
     }
