@@ -19,24 +19,31 @@ function playGame() {
 
         if (humanChoice === computerChoice) {
             div.textContent = ("Tie! You made the same choice.")
+            div.style.backgroundColor = "grey";
             return;
         } else if (humanChoice === "rock" && computerChoice === "paper") {
-            div.textContent = ("You lose! Paper beats Rock");
+            div.textContent = ("You lose! Computer chose paper.");
+            div.style.backgroundColor = "red";
             computerScore++;
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            div.textContent = ("You win! Rock beats Scissors");
+            div.textContent = ("You win! Computer chose scissors.");
+            div.style.backgroundColor = "green";
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "rock") {
-            div.textContent = ("You win! Paper beats Rock");
+            div.textContent = ("You win! Computer chose rock.");
+            div.style.backgroundColor = "green";
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            div.textContent = ("You lose! Scissors beat Paper");
+            div.textContent = ("You lose! Computer chose scissors.");
+            div.style.backgroundColor = "red";
             computerScore++;
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            div.textContent = ("You lose! Rock beats Scissors");
+            div.textContent = ("You lose! Computer chose rock.");
+            div.style.backgroundColor = "red";
             computerScore++;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            div.textContent = ("You win! Scissors beat Paper");
+            div.textContent = ("You win! Computer chose paper.");
+            div.style.backgroundColor = "green";
             humanScore++;
         }
 
